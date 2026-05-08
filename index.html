@@ -239,7 +239,7 @@ function renderList(id, list) {
       <div class="contact-avatar ${u.role==='betreuer'?'betreuer':''}">${u.display.slice(0,2).toUpperCase()}</div>
       <div class="contact-info">
         <div class="contact-name">${u.display}</div>
-        <div class="contact-preview">${esc(previews[u.username]||"")}</div>
+        <div class="contact-preview" style="font-family:'IBM Plex Mono',monospace;">${u.username}${previews[u.username] ? ' · '+esc(previews[u.username]) : ''}</div>
       </div>`;
     el.onclick = () => openChat(u);
     c.appendChild(el);
